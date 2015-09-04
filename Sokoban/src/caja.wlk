@@ -26,9 +26,9 @@ class Caja {
 
 	method getImagen() {
 		if (this.estaBienPosicionada())
-			return "flying_bird.jpg"
+			return "box_correct.png"
 		
-		return "caja.jpg"
+		return "box.png"
 	}
 	
 	method estaBienPosicionada() {

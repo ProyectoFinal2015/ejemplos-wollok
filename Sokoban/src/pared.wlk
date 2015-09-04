@@ -12,6 +12,6 @@ class Pared {
 	
 	method puedePisarte(_) = false
 	
-	method getImagen() = "muro.jpg"
+	method getImagen() = "wall.png"
 	method getPosicion() = posicion
 }

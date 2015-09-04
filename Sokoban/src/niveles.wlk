@@ -16,8 +16,8 @@ object nivel1 {
 		val largo = wgame.getHeight() - 1
 	
 		var posParedes = #[]
-		(0 .. ancho).forEach[ n | posParedes.add(new Position(n, 0)) ] // bordeAbajo
-		(0 .. ancho).forEach[ n | posParedes.add(new Position(n, largo)) ] // bordeArriba 
+		(1 .. ancho-1).forEach[ n | posParedes.add(new Position(n, 0)) ] // bordeAbajo
+		(1 .. ancho-1).forEach[ n | posParedes.add(new Position(n, largo)) ] // bordeArriba 
 		(0 .. largo).forEach[ n | posParedes.add(new Position(0, n)) ] // bordeIzq 
 		(0 .. largo).forEach[ n | posParedes.add(new Position(ancho, n)) ] // bordeDer
 		

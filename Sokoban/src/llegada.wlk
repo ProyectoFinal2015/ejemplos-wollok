@@ -10,6 +10,6 @@ class Llegada {
 	
 	method puedePisarte(_) = true
 	
-	method getImagen() = "almacenaje.jpg"
+	method getImagen() = "goal.png"
 	method getPosicion() = posicion
 }

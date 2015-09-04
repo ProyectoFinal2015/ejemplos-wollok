@@ -50,7 +50,7 @@ object sokoban {
 		direccion = unaDireccion
 	}
 	
-	method getImagen() = "jugador.png"
+	method getImagen() = "sokoban.png"
 	method getPosicion() = posicion
 	method setPosicion(_posicion) {
 		posicion = _posicion
