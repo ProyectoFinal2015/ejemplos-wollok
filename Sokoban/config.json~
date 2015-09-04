@@ -2,5 +2,5 @@
 gameboardTitle: Sokoban
 gameboardHeight: 7
 gameboardWidth: 10
-imageGround: suelo.jpg
+imageGround: suelo.png
 }
