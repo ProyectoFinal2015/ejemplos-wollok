@@ -22,6 +22,6 @@ object granjero {
 	
 	method sumaOro(cantidad) { oro += cantidad }
 
-	method getImagen() = "jugador.png"
+	method getImagen() = "wollokUI_tomaco00.png"
 	method getPosicion() = posicion
 }

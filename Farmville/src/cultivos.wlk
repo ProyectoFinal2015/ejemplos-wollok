@@ -19,11 +19,11 @@ class Cultivo {
 
 
 class Maiz extends Cultivo {
-	method imagenCultivo() = "caja.png"
+	method imagenCultivo() = "wollokUI_tomaco06.png"
 	method oroBase() = 150
 }
 
 class Trigo extends Cultivo {
-	method imagenCultivo() = "muro.png"
+	method imagenCultivo() = "wollokUI_tomaco06.png"
 	method oroBase() = 100
 }

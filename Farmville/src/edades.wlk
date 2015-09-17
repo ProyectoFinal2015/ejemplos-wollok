@@ -4,7 +4,7 @@ object ninio {
 
 	method oro(_) = 0
 	
-	method getImagen(_) = "almacenaje.png"
+	method getImagen(_) = "wollokUI_tomaco05.png"
 }
 
 object adulto {
@@ -22,5 +22,5 @@ object muerto {
 	
 	method oro(_) = 0
 	
-	method getImagen(_) = "flying_bird.png"
+	method getImagen(_) = "wollokUI_tomaco03.png"
 }
