@@ -9,6 +9,7 @@ program FarmvilleGame {
 //	TECLADO
 	wgame.whenKeyPressedDo(wGameKeys.getKeyCode("m"), [ | granjero.planta(new Maiz()) ])
 	wgame.whenKeyPressedDo(wGameKeys.getKeyCode("T"), [ | granjero.planta(new Trigo()) ])
+	wgame.whenKeyPressedDo(wGameKeys.getKeyCode("O"), [ | granjero.planta(new Tomaco()) ])
 	wgame.whenKeyPressedDo(wGameKeys.getKeyCode("R"), [ | granjero.rega() ])
 	wgame.whenKeyPressedDo(wGameKeys.getKeyCode("C"), [ | granjero.cosechaTodo() ])
 	

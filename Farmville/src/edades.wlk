@@ -4,7 +4,7 @@ object ninio {
 
 	method oro(_) = 0
 	
-	method getImagen(_) = "wollokUI_tomaco05.png"
+	method getImagen(cultivo) = cultivo.imagenCultivoNinio()
 }
 
 object adulto {
