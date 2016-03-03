@@ -1,23 +1,25 @@
 object buenosAires {
-	var posicion
 
+	var posicion = new Position(1, 1)
+	
 	method distancia(ciudad) = (this.km() - ciudad.km()).abs() 
 	
 	method km() = 0
 	
 	method getImagen() = "caja.png"
-	method getPosicion() = posicion
-	method setPosicion(pos) {posicion = pos}
+	
+	method posicion() = posicion
 }
 
 object villaGesell {
-	var posicion
+	
+	var posicion = new Position(8, 3)
 
 	method distancia(ciudad) = (this.km() - ciudad.km()).abs() 
 	
 	method km() = 100
 
 	method getImagen() = "caja.png"
-	method getPosicion() = posicion
-	method setPosicion(pos) {posicion = pos}
+	
+	method posicion() = posicion
 }

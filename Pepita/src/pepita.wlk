@@ -17,5 +17,5 @@ object pepita {
 	method energiaDeViajarHasta(unaCiudad) = 15 + 5 * ciudad.distancia(unaCiudad)
 	
 	method getImagen() = "flying_bird.png"
-	method getPosicion() = ciudad.getPosicion()
+	method posicion() = ciudad.posicion()
 }
