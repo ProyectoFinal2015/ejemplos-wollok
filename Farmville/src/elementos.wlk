@@ -1,20 +1,20 @@
 import exceptions.*
+import cultivos.*
 
-object gorra inherits Elemento(new Position(2,9), "spot.png") {
+object bolsa inherits Elemento(new Position(2,9), "bolsa.png") {
 
-	method usar(granjero) { /* No hace nada */ }
+	method usate(plantador) { plantador.planta(new Trigo()) }
 }
 
-object espada inherits Elemento(new Position(2,2), "espada.gif") {
+object regadera inherits Elemento(new Position(9,2), "regadera.png") {
 
-	method usar(granjero) {
-		granjero.cosechaTodo()
-	}
+	method usate(regador) { regador.rega() }
 }
 
-//////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////         CÓDIGO BASE           ////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////
+object espada inherits Elemento(new Position(2,2), "espada.png") {
+
+	method usate(cosechador) { cosechador.cosecha() }
+}
 
 class Elemento {
 	val imagen

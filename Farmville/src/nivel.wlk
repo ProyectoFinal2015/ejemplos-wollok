@@ -1,29 +1,48 @@
 import wollok.game.*
-import granjero.*
-import elementos.*
 import exceptions.*
 import factories.*
+import granjero.*
+import granero.*
+import cultivos.*
 
 object nivel {
 
 	method configure() {
 		var mensaje = "¡Al fin, granero querido!"
+		var cultivos = [new Maiz(), new Trigo(), new Tomate()]
+			
+		try {
+			granero.rega()
+			granero.cosecha()
+			granero.planta(new Maiz())
+			granjero.restaOro(granjero.oro())
+		}
+		catch e : MethodNotImplemented {
+			arbustoFactory.drawVerticalBlock(5, 7)
+			mensaje = this.nivel4()
+		}
+		catch e {}
 		
-		arbustoFactory.drawVerticalBlock(5, 7)
-
-		try 
-			granjero.rega()
+		try {
+			cultivos.forEach{ it =>
+				it.crece()
+				it.cosechate()
+			}
+			granjero.restaOro(granjero.oro())
+		}
 		catch e : MethodNotImplemented {
 			arbustoFactory.drawHorizontalBlock(7, 5)
 			mensaje = this.nivel3()
 		}
+		catch e {}
 		
 		try 
-			granjero.usarElemento()
+			granjero.cosecha(null)
 		catch e : MethodNotImplemented {
 			arbustoFactory.drawVerticalBlock(5, 3)
 			mensaje = this.nivel2()
 		}
+		catch e {}
 		
 		try 
 			granjero.oro()
@@ -31,6 +50,7 @@ object nivel {
 			arbustoFactory.drawHorizontalBlock(3, 5)
 			mensaje = this.nivel1()
 		}
+		catch e {}
 		
 		H.onPressCharacterSay{mensaje}
 	}
@@ -41,4 +61,5 @@ object nivel {
 
 	method nivel3() = "Presiona la tecla 'R' para regar los cultivos"
 
+	method nivel4() = "Entra al granero para BLABLALABAL"
 }

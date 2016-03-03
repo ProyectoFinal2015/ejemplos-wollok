@@ -1,9 +1,22 @@
 import granjero.*
 
+class Maiz inherits Cultivo { 
+	constructor() = super("maiz", 150)
+}
+
+class Trigo inherits Cultivo {
+	constructor() = super("trigo", 100)
+}
+
+class Tomate inherits Cultivo {
+	constructor() = super("tomate", 50)
+}
+
+
 class Cultivo {
 	var precio
 	var nombre
-	var etapa = ninio
+	var etapa = semilla
 	
 	constructor(_nombre, _precio) {
 		nombre = _nombre
@@ -17,56 +30,43 @@ class Cultivo {
 	method crece() { etapa.crece(this) }
 	
 	method cosechate() {
-		granjero.sumarOro(etapa.oroPorCosecha(this))
+		granjero.sumaOro(etapa.oroPorCosecha(this))
 		wgame.removeVisual(this)
 	}
 	
 	method oroBase() = precio
-	method imagenCultivoAdulto() = nombre + "_adult.png"
-	method imagenCultivoNinio() = nombre + "_baby.png"
+	method getNombre() = nombre
 	method setEtapa(_edad) { etapa = _edad }
 	method getImagen() = etapa.getImagen(this)
 }
 
 
-class Maiz inherits Cultivo { 
-	constructor() = super("corn", 150)
-}
-
-class Trigo inherits Cultivo {
-	constructor() = super("wheat", 100)
-}
-
-class Tomaco inherits Cultivo {
-	constructor() = super("tomaco", 50)
-}
-
 
 // ETAPAS
 
-object ninio {
+object semilla {
 
-	method crece(cultivo) { cultivo.setEtapa(adulto) } 
+	method crece(cultivo) { cultivo.setEtapa(bebe) } 
 
 	method oroPorCosecha(_) = 0
 	
-	method getImagen(cultivo) = cultivo.imagenCultivoNinio()
+	method getImagen(_) = "semilla.png"
+}
+
+object bebe {
+	
+	method crece(cultivo) { cultivo.setEtapa(adulto) } 
+	
+	method oroPorCosecha(cultivo) = cultivo.oroBase() / 2
+	
+	method getImagen(cultivo) = cultivo.getNombre() + "_bebe.png"
 }
 
 object adulto {
 	
-	method crece(cultivo) { cultivo.setEtapa(muerto) } 
+	method crece(_) { /* No hace nada */ } 
 	
 	method oroPorCosecha(cultivo) = cultivo.oroBase()
 	
-	method getImagen(cultivo) = cultivo.imagenCultivoAdulto()
-}
-
-object muerto {
-	
-	method crece(_) { "No hace nada" } 
-	
-	method oroPorCosecha(_) = 0
-	
-	method getImagen(_) = "dead_plant.png"
+	method getImagen(cultivo) = cultivo.getNombre() + "_adulto.png"
 }
